@@ -1,11 +1,9 @@
 import './MovieList.scss';
 import { MovieCard } from '../MovieCard';
 
-export const MovieList = ({ moviesFromServer = [] }) => (
+export const MovieList = ({ movies = [] }) => (
   <div className="movies">
-    {Array.isArray(moviesFromServer) &&
-      moviesFromServer.map(movie => (
-        <MovieCard movie={movie} key={movie.imdbId} />
-      ))}
+    {Array.isArray(movies) &&
+      movies.map(movie => <MovieCard movie={movie} key={movie.imdbId} />)}
   </div>
 );
